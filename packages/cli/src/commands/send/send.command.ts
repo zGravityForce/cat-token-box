@@ -156,8 +156,6 @@ export class SendCommand extends BoardcastCommand {
 
     let tokenContracts = pick(contracts, amount);
 
-    console.log(tokenContracts, contracts, 222222);
-
     if (tokenContracts.length === 0) {
       console.warn('Insufficient token balance!');
       return;

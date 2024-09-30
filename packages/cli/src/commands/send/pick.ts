@@ -9,6 +9,8 @@ export function pick(
     return token.state.data.amount == amount;
   });
 
+  console.log("t is 1", t);
+
   // if found a token utxo contains enough token amount
   if (t) {
     return [t];
@@ -17,6 +19,9 @@ export function pick(
   t = tokens.find((token) => {
     return token.state.data.amount > amount;
   });
+  
+  console.log("t is 2", t);
+
 
   // if found a token utxo contains enough token amount
   if (t) {
@@ -34,6 +39,8 @@ export function pick(
       return acc;
     }
   }
+
+  console.log("taccAmount and amount is 2", accAmount, amount);
 
   if (accAmount < amount) {
     return [];
