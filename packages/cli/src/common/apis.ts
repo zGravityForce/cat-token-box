@@ -100,21 +100,21 @@ export const getUtxos = async function (
   wallet: WalletService,
   address: btc.Address,
 ): Promise<UTXO[]> {
-  if (config.useRpc()) {
-    const utxos = await rpc_listunspent(
-      config,
-      wallet.getWalletName(),
-      address.toString(),
-    );
-    if (utxos instanceof Error) {
-      return [];
-    }
-    return utxos;
-  }
+  // if (config.useRpc()) {
+  //   const utxos = await rpc_listunspent(
+  //     config,
+  //     wallet.getWalletName(),
+  //     address.toString(),
+  //   );
+  //   if (utxos instanceof Error) {
+  //     return [];
+  //   }
+  //   return utxos;
+  // }
 
-  if (config.isFractalNetwork() && !config.useRpc()) {
-    return getFractalUtxos(config, address);
-  }
+  // if (config.isFractalNetwork() && !config.useRpc()) {
+  //   return getFractalUtxos(config, address);
+  // }
 
   const script = new btc.Script(address).toHex();
 
