@@ -105,7 +105,7 @@ export async function mergeTokens(
     return [tokens, feeUtxos, null];
   }
 
-  const nOneMerge = 37;
+  const nOneMerge = 37; // 一次 37 merge
 
   const count = Math.ceil(tokens.length / nOneMerge);
 

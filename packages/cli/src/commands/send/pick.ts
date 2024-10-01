@@ -9,7 +9,6 @@ export function pick(
     return token.state.data.amount == amount;
   });
 
-  console.log("t is 1", t);
 
   // if found a token utxo contains enough token amount
   if (t) {
@@ -20,7 +19,6 @@ export function pick(
     return token.state.data.amount > amount;
   });
   
-  console.log("t is 2", t);
 
 
   // if found a token utxo contains enough token amount
@@ -39,8 +37,9 @@ export function pick(
       return acc;
     }
   }
-
-  console.log("taccAmount and amount is 2", accAmount, amount);
+  
+  console.warn("Total send:", amount);
+  console.warn("Available one send:", accAmount);
 
   if (accAmount < amount) {
     return [];
